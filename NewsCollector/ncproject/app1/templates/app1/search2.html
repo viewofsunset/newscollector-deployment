@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+        
+    <h2 style="text-align: center">Search Period(yyyymmdd):from Today to {{serch_input_post|title}}</h2>
+
+<table border="1px">
+	<tr>
+            <th>ID</th>
+        {% for data in final_postings_post %}
+			<th>{{ data }}</th>
+		{% endfor %}
+    </tr>
+    <tr>
+		{% for ID, Date, Media, Title, Contents, URL in final_postings_post.iterrows %}
+			<tr>
+				{% for value in ID %}
+					<td>{{ value }}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</tr>
+</table>
+
+    {% comment %} {% for post in final_postings_post %}
+        <div class = "col s4">
+            <P><a href="{{post.0}}" target="_blank">기사보러가기</a></p>
+            <P>{{post.1}}</p>
+            <P>{{post.2}}</p>
+            <P>{{post.3}}</p>
+            <P>{{post.4}}</p>
+            
+        </div>    
+    {% endfor %}    {% endcomment %}
+
+
+{% endblock content %}

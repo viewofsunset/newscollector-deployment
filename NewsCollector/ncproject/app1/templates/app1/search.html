@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+        
+    <h2 style="text-align: center">Search Period(yyyymmdd):from Today to {{serch_input_post|title}}</h2>
+
+    {{ final_postings_post|safe }}
+
+{% endblock content %}

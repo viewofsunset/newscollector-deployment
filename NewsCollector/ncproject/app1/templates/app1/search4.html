@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+        
+    <h2 style="text-align: center">Search Period(yyyymmdd):from Today to {{serch_input_post|title}}</h2>
+
+ 
+<table border="1px">
+
+{% for ID, Date, Media, Title, Contents, URL in final_postings_post.iterrows %}
+    <tr>
+    {% for value in ID %}
+        <td>
+        {{ value }}
+        </td>
+	{% endfor %}
+	</tr>
+    <tr>
+    {% for value in Date %}
+        <td>
+        {{ value }}
+        </td>
+	{% endfor %}
+	</tr>
+    <tr>
+    {% for value in Media %}
+        <td>
+        {{ value }}
+        </td>
+	{% endfor %}
+	</tr>
+        <tr>
+    {% for value in Title %}
+        <td>
+        {{ value }}
+        </td>
+	{% endfor %}
+	</tr>
+        <tr>
+    {% for value in Contents %}
+        <td>
+        {{ value }}
+        </td>
+	{% endfor %}
+	</tr>
+        <tr>
+    {% for value in URL %}
+        <td>
+        {{ value }}
+        </td>
+	{% endfor %}
+	</tr>    
+{% endfor %}
+</table>
+
+
+{% endblock content %}
